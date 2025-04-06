@@ -18,9 +18,28 @@
    WHERE (где) name_kolona1 = 1 OR ...;
        AND name_kolona1 = 1;
 
-6) 
+6) CONSTRAINT (правила) kluch FOREIGN KEY (kolona3_id) REFERENCES name_table (name_kolona1) такой внешний ключ делается при создании  новой таблицы, которая отсылаетмя на старую
 
+7) SELECT * FROM name_table2 (name_table2.* обозначает выбрать все колонны, name_table.name_kolona2 обозначает что берем только определенную колонну)
+   JOIN name_table ON name_table.name_kolona1 = name_table2.kolona3_id (обьядиняет таблицы между собой по ключу )
 
+8) LEFT\RIGHT OUTER JOIN (достаются строки из левой\правой таблицы без совпадений)
+
+9) агрегатная функция: есть много разных!!!
+    SELECT SUM(name_kolona2) FROM name_table; (выдает сумму всех значний колонки) 
+    GROUP BY kolona3_id (считает сумму для определных строк где совпадает айди)
+
+10) SELECT name_table.* SUM(name_kolona2) FROM name_table
+    JOIN name_table2 ON name_table.name_kolona1 = name_table2.kolona3_id
+    GROUP BY name_table2.kolona3_id
+    HAVING SUM(name_kolona2) > 10000  (условие для фильтрации)
+
+11)AUTOINCREMENT (генерирует последовательность неповторяющихся увеличевуешися цифр, использлвать после PRIMARY KEY)
+
+11) ALTER TABLE name_table2 ADD COLUMN kolona_id_3 BIGINT; (изменяет таблицу добовляя новую коллонку)
+    ALTER TABLE name_table2 ADD CONSTRAINT pravilo2 FOREIGN KEY (kolona_id_3) REFERENCES name_table2 (kolona3_id) (добовляет отношение к новой третьей таблице )
+
+    
   
 
 создание баз данных: add new server -> general(вводим любое имя) -> connection( host name: localhost) -> пароль (postgres) 
