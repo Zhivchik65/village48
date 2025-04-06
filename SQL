@@ -1,2 +1,26 @@
 КОМАНДЫ ДЛЯ SQL:
+1) CREATE (создать) TABLE name_table (
+    name_kolona1 BIGINT (в колонке сожержатся только целые числа) PRIMARY KEY (эта колонка будет являтся универсальным ключом для каждой строки),
+    name_kolona2 VARCHAR(64) (указваем что макс длинна текста 64 символа) NOT NULL (не может быть пустым),
+  ); 
+
+2) INSERT (добавить данные) INTO name_table (name_kolona1, name_kolona2)
+   VALUES (ЗНАЧЕНИЯ ДЛЯ ВСТАВКИ) (1, "fd");
+
+3) UPDATE (обновить данные) name_table SET (поменяй) 
+   name_kolona2 = "cjdckd", ... 
+   WHERE (где) name_kolona1 = 1 OR ...;
+
+4) DELETE (удалить) FROM name_table
+   WHERE (где) name_kolona1 = 1 OR ...; (удалит всю строку с таким айди)
+
+5) SELECT (выбрать определенные данные для получения) name_kolona1, name_kolona2 FROM name_table
+   WHERE (где) name_kolona1 = 1 OR ...;
+       AND name_kolona1 = 1;
+
+6) 
+
+
   
+
+создание баз данных: add new server -> general(вводим любое имя) -> connection( host name: localhost) -> пароль (postgres) 
